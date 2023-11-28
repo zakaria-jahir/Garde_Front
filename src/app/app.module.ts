@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Client/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './Client/register/register.component';
+import { GardienLoginComponent } from './Gardien/gardien-login/gardien-login.component';
+import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    GardienLoginComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
