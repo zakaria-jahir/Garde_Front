@@ -1,22 +1,30 @@
-<form>
-    <h1 class="h3 mb-3 fw-normal">Se connecter</h1>
-
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating mb-5">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <button class="btn btn-primary w-100 py-2" type="submit">Se connecter</button>
-    <div>
-        <p>
-            j'ai un compte <a href="#">Se connecter</a>
+<div class="d-flex " style="width: 100%;">
+  <div class="login-backgound-image " style="width: 70%;">
+    <img src="./assets/images/pet.jpg" alt="images" class=""> 
+  </div>
+  <div class="login-form">
+    <form class="form">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+        <label for="mail">Email address</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2" type="submit">Se connecter</button>
+      <div class="login-google pt-3">
+        <hr>
+        <p class="pt-2">
+          ou <br>
+           bien se connecter avec <a href="#">google</a>
         </p>
-    </div>
-    <div>
-        ou se connecter avec <a href="#">google</a>
-    </div>
-</form>
+          <p class="pt-5" style="font-size: 20px; text-align: center;">
+              je n'ai pas un compte ? <a href="/register">S'inscrire</a>
+          </p>
+      </div>
+  </form>
+  </div>
+  
+</div>
