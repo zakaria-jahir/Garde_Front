@@ -8,6 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './Client/register/register.component';
 import { GardienLoginComponent } from './Gardien/gardien-login/gardien-login.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+import { AccueilComponent } from './Pages/accueil/accueil.component';
+import { ReservationsComponent } from './Pages/reservations/reservations.component';
+import { ErrorPageComponent } from './Pages/error-page/error-page.component';
+import { RechercheGardienComponent } from './Pages/recherche-gardien/recherche-gardien.component';
+import { DetailGardienComponent } from './Pages/detail-gardien/detail-gardien.component';
+import {MatSelectModule} from '@angular/material/select';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +23,20 @@ import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
     LoginComponent,
     RegisterComponent,
     GardienLoginComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AccueilComponent,
+    ReservationsComponent,
+    ErrorPageComponent,
+    RechercheGardienComponent,
+    DetailGardienComponent,
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
