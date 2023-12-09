@@ -16,6 +16,9 @@ import { DetailGardienComponent } from './Pages/detail-gardien/detail-gardien.co
 import {MatSelectModule} from '@angular/material/select';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { ModifierProfilComponent } from './Client/modifier-profil/modifier-profil.component';
+import { AboutComponent } from './Pages/about/about.component';
+import { ValidreservationComponent } from './Pages/validreservation/validreservation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { FooterComponent } from './Components/footer/footer.component';
     RechercheGardienComponent,
     DetailGardienComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    ModifierProfilComponent,
+    AboutComponent,
+    ValidreservationComponent
   ],
   imports: [
     BrowserModule,
