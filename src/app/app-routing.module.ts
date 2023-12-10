@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'gardiens', component:RechercheGardienComponent},
   {path:'gardien/:id', component:DetailGardienComponent},
   {path:'Apropos', component:AboutComponent},
-  {path:'resersation', component:ReservationsComponent},
+  {path:'resersation/:id', component:ReservationsComponent},
   {path:'Facture', component:ValidreservationComponent},
   { path: '**', component:ErrorPageComponent}
 ];

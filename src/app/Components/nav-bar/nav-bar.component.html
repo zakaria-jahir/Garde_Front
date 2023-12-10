@@ -10,9 +10,13 @@
         <li class="nav-item"><a href="/gardiens" class="nav-link text-black">Gardien</a></li>
         <li class="nav-item"><a href="/Apropos" class="nav-link text-black">À propos</a></li>
       </ul>
-      <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2" (click)="login()">Login</button>
+      <div *ngIf="loggedIn == false" class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2" (click)="login()">se connecter</button>
         <button type="button" class="btn btn-primary" (click)="register()">s'inscrire</button>
+      </div>
+      <div *ngIf="loggedIn == true" class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2" (click)="goToProfil()">Profile</button>
+        <button type="button" class="btn btn-outline-primary me-2" (click)="loggout()">se deconnecter</button>
       </div>
     </header>
   </div>

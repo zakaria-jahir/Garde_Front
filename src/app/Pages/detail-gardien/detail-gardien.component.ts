@@ -32,4 +32,12 @@ export class DetailGardienComponent implements OnInit {
       console.log(this.gardienDetail);
     })
   }
+  reservePlace() {
+    // Check if gardienDetail has the required information
+    if (this.gardienDetail && this.gardienDetail.id) {
+      // Navigate to the checkout page and pass the gardien ID as a parameter
+      this.router.navigate(['/resersation', this.gardienDetail.id]);
+    }
+  }
+  
 }

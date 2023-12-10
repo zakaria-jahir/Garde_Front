@@ -20,6 +20,11 @@ export class ServicesService {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post(`${this.BASED_URL}gardien/login`, data, { headers });
   }
+  loginClient(data: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.BASED_URL}client/login`, data, { headers });
+  }
+  
 
   private loggedIn = new BehaviorSubject<boolean>(false);
   getLoggedIn(): BehaviorSubject<boolean> {
@@ -28,6 +33,8 @@ export class ServicesService {
   setLoggedIn(value: boolean): void {
     this.loggedIn.next(value);
   }
+
+  
 
   getGardiens(){
     const url = this.BASED_URL + 'gardiens';
@@ -45,5 +52,40 @@ export class ServicesService {
   setIdGardien(value: number):void{
     this.idGardien.next(value);
   }
+  private idClient = new BehaviorSubject<number | undefined>(undefined);
+  getIdClient(): BehaviorSubject<number | undefined>{
+    const storedId = localStorage.getItem('clientId');
+    if (storedId) {
+      this.idClient.next(+storedId);
+    }
+    return this.idClient;
+  }
+  setIdClient(value: number):void{
+    localStorage.setItem('clientId', value.toString());
+    this.idClient.next(value);
+  }
+  private idAdmin = new BehaviorSubject<number | undefined>(undefined);
+  getIdAdmin(): BehaviorSubject<number | undefined>{
+    return this.idAdmin;
+  }
+  setIdAdmin(value: number):void{
+    this.idAdmin.next(value);
+  }
+  logoutClient(): void {
+    localStorage.removeItem('clientId');
+    this.idClient.next(undefined);
+  }
+
+  // private localStorageKey = 'loggedIn';
+
+  // getLocalStorageLoginStatus(): boolean {
+  //   const storedValue = localStorage.getItem(this.localStorageKey);
+  //   return storedValue ? JSON.parse(storedValue) : false;
+  // }
+
+  // setLocalStorageLoginStatus(value: boolean): void {
+  //   localStorage.setItem(this.localStorageKey, JSON.stringify(value));
+  // }
+
 
 }

@@ -3,14 +3,14 @@
     <img src="./assets/images/pet.jpg" alt="images" class=""> 
   </div>
   <div class="login-form">
-    <form class="form">
+    <form class="form" [formGroup]="clientForm" (ngSubmit)="login(clientForm.value)">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="mail" placeholder="name@example.com">
-        <label for="mail">Email address</label>
+        <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail">
+        <label for="mail" class="form-label">Email address</label>
       </div>
       <div class="form-floating mb-4">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        <label for="password" class="form-label">Password</label>
       </div>
   
       <button class="btn btn-primary w-100 py-2" type="submit">Se connecter</button>
