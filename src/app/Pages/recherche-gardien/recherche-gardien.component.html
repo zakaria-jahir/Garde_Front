@@ -1,65 +1,18 @@
 <app-nav-bar></app-nav-bar>
 <div class="row">
-    <div  class="col-3 mb-5">
-        <div class="card" style="width: 18rem; cursor: pointer;">
+    <div *ngFor="let gardien of gardienList" class="col-3 mb-5 d-flex justify-content-evenly">
+        <div class="card" style="width: 18rem; cursor: pointer; ">
             <img  class="card-img-top" >
             <div class="card-body">
-              <h3 class="card-title text-center"> nom prenom  </h3>
+              <h3 class="card-title text-center"> {{gardien.nom}} {{ gardien.prenom}}</h3>
                 <p   class="card-text text-center text-success border border-success rounded-3" style="width:80px;">etat</p>
                 <p class="card-text text-center text-danger border border-danger rounded-3" style="width:90px;"  >etat</p>
-                <p class="card-text text-center " style="width:90px;"  >typeGardien</p>
-                <p class="card-text text-center " style="width:90px;"  >typeAnimaux</p>
-              <!-- <p class="card-text" > {{v.etat}} </p> -->
+                <p class="card-text text-center " style="width:90px;"  >{{gardien.typeGardien}}</p>
+                <p class="card-text text-center " style="width:90px;"  >{{gardien.typeAnimaux}}</p>
               <p class="card-text"> 40 TND/<small>par jour</small></p>
-              <a class="btn btn-success d-flex justify-content-center" >Info et Réservation</a>
+              <a class="btn btn-success d-flex justify-content-center" (click)="goTo(gardien)">Info et Réservation</a>
             </div>
           </div>
     </div>
-    <div  class="col-3 mb-5">
-        <div class="card" style="width: 18rem; cursor: pointer;">
-            <img  class="card-img-top" >
-            <div class="card-body">
-              <h3 class="card-title text-center"> nom prenom  </h3>
-                <p   class="card-text text-center text-success border border-success rounded-3" style="width:80px;">etat</p>
-                <p class="card-text text-center text-danger border border-danger rounded-3" style="width:90px;"  >etat</p>
-                <p class="card-text text-center " style="width:90px;"  >typeGardien</p>
-                <p class="card-text text-center " style="width:90px;"  >typeAnimaux</p>
-              <!-- <p class="card-text" > {{v.etat}} </p> -->
-              <p class="card-text"> 40 TND/<small>par jour</small></p>
-              <a class="btn btn-success d-flex justify-content-center" >Info et Réservation</a>
-            </div>
-          </div>
-    </div>
-    <div  class="col-3 mb-5">
-        <div class="card" style="width: 18rem; cursor: pointer;">
-            <img  class="card-img-top" >
-            <div class="card-body">
-              <h3 class="card-title text-center"> nom prenom  </h3>
-                <p   class="card-text text-center text-success border border-success rounded-3" style="width:80px;">etat</p>
-                <p class="card-text text-center text-danger border border-danger rounded-3" style="width:90px;"  >etat</p>
-                <p class="card-text text-center " style="width:90px;"  >typeGardien</p>
-                <p class="card-text text-center " style="width:90px;"  >typeAnimaux</p>
-              <!-- <p class="card-text" > {{v.etat}} </p> -->
-              <p class="card-text"> 40 TND/<small>par jour</small></p>
-              <a class="btn btn-success d-flex justify-content-center" >Info et Réservation</a>
-            </div>
-          </div>
-    </div>
-    <div  class="col-3 mb-5">
-        <div class="card" style="width: 18rem; cursor: pointer;">
-            <img  class="card-img-top" >
-            <div class="card-body">
-              <h3 class="card-title text-center"> nom prenom  </h3>
-                <p   class="card-text text-center text-success border border-success rounded-3" style="width:80px;">etat</p>
-                <p class="card-text text-center text-danger border border-danger rounded-3" style="width:90px;"  >etat</p>
-                <p class="card-text text-center " style="width:90px;"  >typeGardien</p>
-                <p class="card-text text-center " style="width:90px;"  >typeAnimaux</p>
-              <!-- <p class="card-text" > {{v.etat}} </p> -->
-              <p class="card-text"> 40 TND/<small>par jour</small></p>
-              <a class="btn btn-success d-flex justify-content-center" >Info et Réservation</a>
-            </div>
-          </div>
-    </div>
-    
-</div>
+  </div>
 <app-footer></app-footer>

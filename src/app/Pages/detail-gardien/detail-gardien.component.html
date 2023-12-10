@@ -1,1 +1,25 @@
-<p>detail-gardien works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div *ngIf="gardienDetail" class=" container" style="width: 100%; margin-top: 6%;">
+    <div class="d-flex justify-content-start">
+      <div style="margin-left: 10%;">
+          <p><strong>Nom : </strong> <span class="ms-3">{{ gardienDetail.nom }}</span> </p>
+          <p><strong>Prenom : </strong> <span class="ms-3">{{ gardienDetail.prenom }}</span> </p>
+          <p><strong>Type du gardien : </strong> <span class="ms-3">{{ gardienDetail.nom }}</span> </p>
+          <p><strong>Type d'animaux : </strong> <span class="ms-3">{{ gardienDetail.nom }}</span> </p>
+          <p><strong>Tarif par jour : </strong> <span class="ms-3">{{ gardienDetail.prixJour }} TND</span> </p>
+          <div><strong> Contact : </strong> 
+            <ul>
+                <li>Numéro de télèphone :<span class="ms-3">{{gardienDetail.teleNum}}</span></li>
+            <li>e-mail : <span class="ms-3">{{ gardienDetail.mail }}</span></li>
+            </ul>
+          </div>
+          
+      </div>
+    </div>
+</div>
+<h4 *ngIf='!gardienDetail' class="center">
+    <app-error-page></app-error-page>  
+</h4>
+
+<app-footer></app-footer>

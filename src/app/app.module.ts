@@ -16,9 +16,13 @@ import { DetailGardienComponent } from './Pages/detail-gardien/detail-gardien.co
 import {MatSelectModule} from '@angular/material/select';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/footer/footer.component';
-import { ModifierProfilComponent } from './Client/modifier-profil/modifier-profil.component';
+import {ModifierProfilComponent} from './Gardien/modifier-profil/modifier-profil.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { ValidreservationComponent } from './Pages/validreservation/validreservation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -36,12 +40,15 @@ import { ValidreservationComponent } from './Pages/validreservation/validreserva
     FooterComponent,
     ModifierProfilComponent,
     AboutComponent,
-    ValidreservationComponent
+    ValidreservationComponent,
+    GardienDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     MatSelectModule
   ],
   providers: [],

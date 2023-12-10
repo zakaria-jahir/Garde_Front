@@ -10,6 +10,9 @@ import { RechercheGardienComponent } from './Pages/recherche-gardien/recherche-g
 import { AboutComponent } from './Pages/about/about.component';
 import { ReservationsComponent } from './Pages/reservations/reservations.component';
 import { ValidreservationComponent } from './Pages/validreservation/validreservation.component';
+import { DetailGardienComponent } from './Pages/detail-gardien/detail-gardien.component';
+import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-dashboard.component';
+import { ModifierProfilComponent } from './Gardien/modifier-profil/modifier-profil.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'accueil', pathMatch:'full'},
@@ -18,7 +21,10 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'adminadmin', component:AdminLoginComponent},
   {path:'login/gardien', component:GardienLoginComponent},
+  {path:'gardien/dashboard', component:GardienDashboardComponent},
+  {path:'gardienProfil/:id', component:ModifierProfilComponent},
   {path:'gardiens', component:RechercheGardienComponent},
+  {path:'gardien/:id', component:DetailGardienComponent},
   {path:'Apropos', component:AboutComponent},
   {path:'resersation', component:ReservationsComponent},
   {path:'Facture', component:ValidreservationComponent},
