@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+
+<div>
+    <h2>Edit Reservation</h2>
+    <form>
+      <!-- Display and edit reservation fields here -->
+      <label for="nomAnimal">Nom de l'animal:</label>
+      <input type="text" id="nomAnimal" [(ngModel)]="reservation.nomAnimal" name="nomAnimal" required>
+    <div>
+      <label>Type de l'animal:</label>
+      
+        <label>
+          <input type="radio" name="typeAnimal" value="chat" [(ngModel)]="reservation.typeAnimal" required> Chat
+        </label>
+        <label>
+          <input type="radio" name="typeAnimal" value="chien" [(ngModel)]="reservation.typeAnimal" required> Chien
+        </label>
+      </div>
+  
+      <!-- Add other fields as needed -->
+  
+      <button type="button" (click)="updateReservation()" class="btn btn-warning"  >Update Reservation</button>
+    </form>
+  </div>
+  
+
+<app-footer></app-footer>

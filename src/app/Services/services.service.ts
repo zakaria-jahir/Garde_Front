@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,27 @@ export class ServicesService {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post(`${this.BASED_URL}client/login`, data, { headers });
   }
+  loginAdmin(data: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.BASED_URL}admin/login`, data, { headers });
+  }
+  register(data: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.BASED_URL}addClient`, data, { headers });
+  }
+
+
+
+  reserver(data: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+    return this.http.post(`${this.BASED_URL}reserver`, data, { headers })
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred in reserver request:', error);
+        return throwError('Error occurred during reservation');
+      }));
+  }
   
 
   private loggedIn = new BehaviorSubject<boolean>(false);
@@ -44,6 +65,52 @@ export class ServicesService {
     const url = this.BASED_URL + 'gardien/'+gardienId;
     return this.http.get<any>(url).pipe(map(data => data)); 
   }
+  getClientById(clientId: number): Observable<any> {
+    const url = `${this.BASED_URL}client/${clientId}`;
+    return this.http.get<any>(url);
+  }
+
+  getReservationById(reservationId: any): Observable<any> {
+    const url = this.BASED_URL + 'reservation/'+reservationId;
+    return this.http.get<any>(url).pipe(map(data => data)); 
+  }
+
+  updateReservation(data: any): Observable<any> {
+    const headers = { 'Content-Type': 'application/json' };
+    const url = this.BASED_URL + 'updateReservation';
+    return this.http.put<any>(url, data, { headers }).pipe(map((data) => data));
+  }
+  
+  
+
+  deleteReservation(reservationId: number): Observable<any> {
+    const url = `${this.BASED_URL}deleteReservation/${reservationId}`;
+    return this.http.delete(url);
+  }
+  
+  getClientReservations(clientId: number): Observable<any> {
+    const url = `${this.BASED_URL}clientReservations/${clientId}`;
+    return this.http.get<any>(url);
+  }
+  
+
+  updateClientProfil(data: any): Observable<any> {
+    const headers = { 'Content-Type': 'application/json' };
+    const url = this.BASED_URL + 'updateClient';
+     // Convert form data to JSON object
+  const jsonData = {
+    nom: data.get('nom'),
+    prenom: data.get('prenom'),
+    mail: data.get('mail'),
+    teleNum: data.get('teleNum'),
+    password: data.get('password'),
+    id: data.get('id')
+  };
+    return this.http.put<any>(url, jsonData, { headers }).pipe(map(data => data));
+  }
+  
+
+
 
   private idGardien = new BehaviorSubject<number | undefined>(undefined);
   getIdGardien(): BehaviorSubject<number | undefined>{
@@ -76,16 +143,6 @@ export class ServicesService {
     this.idClient.next(undefined);
   }
 
-  // private localStorageKey = 'loggedIn';
-
-  // getLocalStorageLoginStatus(): boolean {
-  //   const storedValue = localStorage.getItem(this.localStorageKey);
-  //   return storedValue ? JSON.parse(storedValue) : false;
-  // }
-
-  // setLocalStorageLoginStatus(value: boolean): void {
-  //   localStorage.setItem(this.localStorageKey, JSON.stringify(value));
-  // }
 
 
 }

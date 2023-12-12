@@ -3,25 +3,25 @@
       <img src="./assets/images/pet.jpg" alt="images" class=""> 
     </div>
     <div class="login-form">
-      <form class="form">
+      <form class="form" [formGroup]="clientForm" (ngSubmit)="register(clientForm.value)">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="nom" placeholder="name@example.com">
+            <input type="text" class="form-control" id="nom" placeholder="name@example.com" formControlName="nom">
             <label for="nom">Nom</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="prenom" placeholder="name@example.com">
+            <input type="text" class="form-control" id="prenom" placeholder="name@example.com" formControlName="prenom">
             <label for="prenom">Prenom</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="tele" placeholder="12345678">
+            <input type="number" class="form-control" id="tele" placeholder="12345678" formControlName="teleNum">
             <label for="tele">Numero de télèphone</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+          <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail">
           <label for="mail">Email address </label>
         </div>
         <div class="form-floating mb-4">
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
           <label for="password">Password</label>
         </div>
     

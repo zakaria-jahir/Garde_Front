@@ -9,6 +9,7 @@
         <li class="nav-item"><a href="/accueil" class="nav-link text-black" aria-current="page">Accueil</a></li>
         <li class="nav-item"><a href="/gardiens" class="nav-link text-black">Gardien</a></li>
         <li class="nav-item"><a href="/Apropos" class="nav-link text-black">À propos</a></li>
+        <li *ngIf="loggedIn == true" class="nav-item"><a routerLink="/client-reservations" class="nav-link text-black">Mes Reservations</a></li>
       </ul>
       <div *ngIf="loggedIn == false" class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2" (click)="login()">se connecter</button>
@@ -17,6 +18,7 @@
       <div *ngIf="loggedIn == true" class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2" (click)="goToProfil()">Profile</button>
         <button type="button" class="btn btn-outline-primary me-2" (click)="loggout()">se deconnecter</button>
+
       </div>
     </header>
   </div>

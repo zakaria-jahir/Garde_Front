@@ -12,18 +12,15 @@
                     </div>
                     <div class="card-body">
                         <!-- Afficher les détails de la réservation -->
-                        <p>Nom: <span id="billing-name"></span></p>
-                        <p>Prénom: <span id="billing-lastname"></span></p>
-                        <p>adresse: <span id="billing-adresse"></span></p>
-                        <p>numero telephone: <span id="billing-tel"></span></p>
-                        <p>Type Animal: <span id="billing-type"></span></p>
-                        <p>Nom Animal: <span id="billing-animal"></span></p>
-                        <p>Date Debut <span id="billing-datedebut"></span></p>
-                        <p>Date Fin <span id="billing-datefin"></span></p>
-                        <h4>prix jour: <span id="total-price">0 dt</span></h4>
-                        <h4>Total: <span id="total-price">0 dt</span></h4>
-                       
-                        <p>Date Fin <span id="billing-datefin"></span></p>
+                        <p>Nom: <span id="billing-name">{{reservationDetails.nomFacture}}</span></p>
+                        <p>Prénom: <span id="billing-lastname">{{reservationDetails.penomFacture}}</span></p>
+                        <p>adresse: <span id="billing-adresse">{{reservationDetails.adresseFacture}}</span></p>
+                        <p>mail: <span id="billing-tel">{{reservationDetails.mailFacture}}</span></p>
+                        <p>Type Animal: <span id="billing-type">{{reservationDetails.nomAnimal}}</span></p>
+                        <p>Nom Animal: <span id="billing-animal">{{reservationDetails.typeAnimal}}</span></p>
+                        <p>Date Debut <span id="billing-datedebut">{{reservationDetails.dateDebut}}</span></p>
+                        <p>Date Fin <span id="billing-datefin">{{reservationDetails.dateFin}}</span></p>
+                        <h4>Total: <span id="total-price">{{reservationDetails.total}}dt</span></h4>
                     </div>
                 </div>
             </div>

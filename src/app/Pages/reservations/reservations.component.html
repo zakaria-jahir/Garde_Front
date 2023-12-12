@@ -17,45 +17,42 @@
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 class="my-0">{{ gardienDetail.nom }}</h6>
+                  <h6 class="my-0">nom gardien</h6>
                   <small class="text-body-secondary">{{ gardienDetail.nom }}</small>
                 </div>
-                <span class="text-body-secondary">{{ gardienDetail.prixJour }}</span>
+                <!-- <span class="text-body-secondary">{{ gardienDetail.prixJour }}</span> -->
               </li>
               <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 class="my-0">Second product</h6>
-                  <small class="text-body-secondary">Brief description</small>
+                  <h6 class="my-0">prenom gardien</h6>
+                  <small class="text-body-secondary">{{ gardienDetail.prenom }}</small>
                 </div>
-                <span class="text-body-secondary">$8</span>
+                <!-- <span class="text-body-secondary">$8</span> -->
               </li>
               <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 class="my-0">Third item</h6>
-                  <small class="text-body-secondary">Brief description</small>
+                  <h6 class="my-0">numero du télèphone</h6>
+                  <small class="text-body-secondary">{{ gardienDetail.teleNum }}</small>
                 </div>
-                <span class="text-body-secondary">$5</span>
+                <!-- <span class="text-body-secondary">$5</span> -->
               </li>
-              <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-                <div class="text-success">
-                  <h6 class="my-0">Promo code</h6>
-                  <small>EXAMPLECODE</small>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Tarifs par jour</h6>
+                  <small class="text-body-secondary">{{ gardienDetail.prixJour }} DT</small>
                 </div>
-                <span class="text-success">−$5</span>
+                <!-- <span class="text-body-secondary">$5</span> -->
               </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <span>Total (USD)</span>
-                <strong>$20</strong>
-              </li>
+
             </ul>
           </div>
         
         <div class="col-md-7 col-lg-8">
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" [formGroup]="ReservationForm" (ngSubmit)="calculateTotal(); reserver(ReservationForm.value)">
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">nom</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Nom" value="" required>
+                <input type="text" class="form-control" id="firstName" placeholder="Nom" value="" required formControlName="nomFacture">
                 <div class="invalid-feedback">
                   Nom est obligatoire
                 </div>
@@ -63,14 +60,14 @@
   
               <div class="col-sm-6">
                 <label for="lastName" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Prenom" value="" required>
+                <input type="text" class="form-control" id="lastName" placeholder="Prenom" value="" required formControlName="prenomFacture">
                 <div class="invalid-feedback">
                     Prenom est obligatoire
                 </div>
               </div>
               <div class="col-12">
-                <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="mail@example.com">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="mail@example.com" required formControlName="mailFacture">
                 <div class="invalid-feedback">
                     Veuillez saisir une adresse e-mail valide pour les mises à jour d'expédition. 
                 </div>
@@ -78,20 +75,16 @@
   
               <div class="col-12">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required formControlName="adresseFacture">
                 <div class="invalid-feedback">
                     Prière d'indiquer ton adresse d'expédition.
                 </div>
               </div>
   
-              <div class="col-12">
-                <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-              </div>
 
               <div class="col-12">
                 <label for="firstName" class="form-label">Nom d'Animal</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Nom d'Animal" value="" required>
+                <input type="text" class="form-control" id="firstName" placeholder="Nom d'Animal" value="" required formControlName="nomAnimal">
                 <div class="invalid-feedback">
                   Nom Animal est obligatoire
                 </div>
@@ -99,13 +92,13 @@
               <div>
                 <h3>Type d'animaux</h3>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="typeAnimal" value="Chien">
                 <label class="form-check-label" for="flexRadioDefault1">
                   Chien
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" formControlName="typeAnimal" value="chat">
                 <label class="form-check-label" for="flexRadioDefault2">
                   Chat
                 </label>
@@ -113,16 +106,17 @@
 
               <div class="col-sm-6">
                 <label for="dateDebut" class="form-label">date de debut</label>
-                <input type="datetime-local" class="form-control" name="datetime-local" id="dateDebut"/>
+                <input type="datetime-local" class="form-control" name="datetime-local" id="dateDebut" formControlName="dateDebut" />
               </div>
               <div class="col-sm-6">
                 <label for="dateFin" class="form-label">date de fin</label>
-                <input type="datetime-local" class="form-control" name="datetime-local" id="dateFin"/>
+                <input type="datetime-local" class="form-control" name="datetime-local" id="dateFin" formControlName="dateFin" (change)="calculateTotal()"/>
               </div>
               </div>
-
-
-
+              <div class="col-12">
+                <label for="total" class="form-label">Total en Dinar</label>
+                <input type="text" class="form-control" id="total" formControlName="total"  readonly> 
+              </div>
             </div>
   
             <hr class="my-4">

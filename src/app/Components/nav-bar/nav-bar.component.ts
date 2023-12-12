@@ -53,5 +53,8 @@ export class NavBarComponent implements OnInit {
   register(){
     this.router.navigate(['/register']);
   }
+  navigateToClientReservations() {
+    this.router.navigate(['/client-reservations']);
+  }
 
 }

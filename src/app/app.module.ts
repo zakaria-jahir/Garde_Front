@@ -22,6 +22,13 @@ import { ValidreservationComponent } from './Pages/validreservation/validreserva
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-dashboard.component';
+import { ProfilClientComponent } from './Client/profil-client/profil-client.component';
+import { AdminDashComponent } from './Admin/admin-dash/admin-dash.component';
+import { AdminNavComponent } from './Components/admin-nav/admin-nav.component';
+import { GardienNavComponent } from './Components/gardien-nav/gardien-nav.component';
+import { ClientReservationComponent } from './Client/client-reservation/client-reservation.component';
+import { UpdateReservationComponent } from './Client/update-reservation/update-reservation.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +48,13 @@ import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-d
     ModifierProfilComponent,
     AboutComponent,
     ValidreservationComponent,
-    GardienDashboardComponent
+    GardienDashboardComponent,
+    ProfilClientComponent,
+    AdminDashComponent,
+    AdminNavComponent,
+    GardienNavComponent,
+    ClientReservationComponent,
+    UpdateReservationComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +62,7 @@ import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-d
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     MatSelectModule
   ],
   providers: [],

@@ -13,21 +13,30 @@ import { ValidreservationComponent } from './Pages/validreservation/validreserva
 import { DetailGardienComponent } from './Pages/detail-gardien/detail-gardien.component';
 import { GardienDashboardComponent } from './Gardien/gardien-dashboard/gardien-dashboard.component';
 import { ModifierProfilComponent } from './Gardien/modifier-profil/modifier-profil.component';
+import { ProfilClientComponent } from './Client/profil-client/profil-client.component';
+import { AdminDashComponent } from './Admin/admin-dash/admin-dash.component';
+import { ClientReservationComponent } from './Client/client-reservation/client-reservation.component';
+import { UpdateReservationComponent } from './Client/update-reservation/update-reservation.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'accueil', pathMatch:'full'},
   {path:'accueil', component:AccueilComponent},
-  {path:'login', component:LoginComponent},
+  {path:'logadmin', component:AdminLoginComponent},
   {path:'register', component: RegisterComponent},
+  {path:'login', component: LoginComponent},
   {path:'adminadmin', component:AdminLoginComponent},
   {path:'login/gardien', component:GardienLoginComponent},
   {path:'gardien/dashboard', component:GardienDashboardComponent},
+  {path:'admin/dashboard', component: AdminDashComponent},
   {path:'gardienProfil/:id', component:ModifierProfilComponent},
+  {path:'ClientProfil/:id', component:ProfilClientComponent},
   {path:'gardiens', component:RechercheGardienComponent},
   {path:'gardien/:id', component:DetailGardienComponent},
   {path:'Apropos', component:AboutComponent},
+  { path: 'client-reservations', component: ClientReservationComponent },
+  { path: 'update-reservation/:id', component: UpdateReservationComponent },
   {path:'resersation/:id', component:ReservationsComponent},
-  {path:'Facture', component:ValidreservationComponent},
+  {path:'Facture/:id', component:ValidreservationComponent},
   { path: '**', component:ErrorPageComponent}
 ];
 
