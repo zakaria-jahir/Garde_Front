@@ -1,0 +1,60 @@
+<app-admin-nav></app-admin-nav>
+
+    <div class="login-form container">
+      <form class="form" [formGroup]="clientForm" (ngSubmit)="register(clientForm.value)">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nom" placeholder="name@example.com" formControlName="nom" required>
+            <label for="nom">Nom</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="prenom" placeholder="name@example.com" formControlName="prenom" required>
+            <label for="prenom">Prenom</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="tele" placeholder="12345678" formControlName="teleNum" required>
+            <label for="tele">Numero de télèphone</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail" required>
+          <label for="mail">Email address </label>
+        </div>
+        <h3>Type d'animaux</h3>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="typeAnimaux" value="Chien" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Chien
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" formControlName="typeAnimaux" value="chat" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Chat
+          </label>
+        </div>
+        <h3>Type du gardien</h3>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="typeGardien" value="Vetairinaire" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Vetairinaire
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" formControlName="typeGardien" value="spesialiste " required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            spesialiste en garde
+          </label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="prix" placeholder="00" formControlName="prixJour" required>
+            <label for="prix">prixJour</label>
+        </div>
+        <div class="form-floating mb-4">
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" required>
+          <label for="password">Password</label>
+        </div>
+    
+        <button class="btn btn-primary w-100 py-2" type="submit" id="register">ajouter</button>
+
+    </form>
+    </div>
+    
