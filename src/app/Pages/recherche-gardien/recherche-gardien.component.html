@@ -4,12 +4,12 @@
         <div class="card" style="width: 18rem; cursor: pointer; ">
             <img  class="card-img-top" >
             <div class="card-body">
-              <h3 class="card-title text-center"> {{gardien.nom}} {{ gardien.prenom}}</h3>
-                <p   class="card-text text-center text-success border border-success rounded-3" style="width:80px;">etat</p>
-                <p class="card-text text-center text-danger border border-danger rounded-3" style="width:90px;"  >etat</p>
-                <p class="card-text text-center " style="width:90px;"  >{{gardien.typeGardien}}</p>
-                <p class="card-text text-center " style="width:90px;"  >{{gardien.typeAnimaux}}</p>
-              <p class="card-text"> 40 TND/<small>par jour</small></p>
+              <h3 class="card-title text-center"> <strong>nom gardien :</strong>  {{gardien.nom}} </h3>
+                  <h3 class="card-title text-center"> <strong> prenom gardien :</strong>  {{ gardien.prenom}}</h3>
+                    <p class="card-text text-center "   > <strong>type du gardien :</strong> {{gardien.typeGardien}}</p>
+                    <p class="card-text text-center "  > <strong>type du gardien :</strong>  {{gardien.typeAnimaux}}</p>
+                    <p class="card-text text-center "  > <strong>numero du telephone :</strong>  {{gardien.teleNum}}</p>
+                    <p class="card-text"><strong>Tarif :</strong> {{gardien.prixJour}} DT<small>par jour</small></p>
               <a class="btn btn-success d-flex justify-content-center" (click)="goTo(gardien)">Info et Réservation</a>
             </div>
           </div>

@@ -45,6 +45,9 @@ export class AdminNavComponent implements OnInit {
   navigateToClients() {
     this.router.navigate(['/Clients']);
   }
+  navigateToAddGardien(){
+    this.router.navigate(['/addGardien']);
+  }
 
 
   goToProfil(){

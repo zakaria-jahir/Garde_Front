@@ -21,6 +21,7 @@ import { GardienReservationComponent } from './Gardien/gardien-reservation/gardi
 import { ClientsComponent } from './Admin/clients/clients.component';
 import { AllReservationsComponent } from './Admin/all-reservations/all-reservations.component';
 import { GardiensComponent } from './Admin/gardiens/gardiens.component';
+import { AddGardienComponent } from './Admin/add-gardien/add-gardien.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'accueil', pathMatch:'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'Clients', component: ClientsComponent},
   {path:'AllReservations', component: AllReservationsComponent},
   {path:'Gardiens', component: GardiensComponent},
+  {path:'addGardien', component: AddGardienComponent},
   {path:'login', component: LoginComponent},
   {path:'adminadmin', component:AdminLoginComponent},
   {path:'login/gardien', component:GardienLoginComponent},

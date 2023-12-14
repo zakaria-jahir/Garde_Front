@@ -5,21 +5,17 @@
   <div class="login-form">
     <form class="form" [formGroup]="clientForm" (ngSubmit)="login(clientForm.value)">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail">
+        <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail" required>
         <label for="mail" class="form-label">Email address</label>
       </div>
       <div class="form-floating mb-4">
-        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" required>
         <label for="password" class="form-label">Password</label>
       </div>
   
       <button class="btn btn-primary w-100 py-2" type="submit" id="login">Se connecter</button>
       <div class="login-google pt-3">
         <hr>
-        <p class="pt-2">
-          ou <br>
-           bien se connecter avec <a href="#">google</a>
-        </p>
           <p class="pt-5" style="font-size: 20px; text-align: center;">
               je n'ai pas un compte ? <a href="/register">S'inscrire</a>
           </p>

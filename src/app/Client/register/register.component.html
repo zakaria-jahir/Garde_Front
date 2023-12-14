@@ -5,23 +5,23 @@
     <div class="login-form">
       <form class="form" [formGroup]="clientForm" (ngSubmit)="register(clientForm.value)">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="nom" placeholder="name@example.com" formControlName="nom">
+            <input type="text" class="form-control" id="nom" placeholder="name@example.com" formControlName="nom" required>
             <label for="nom">Nom</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="prenom" placeholder="name@example.com" formControlName="prenom">
+            <input type="text" class="form-control" id="prenom" placeholder="name@example.com" formControlName="prenom" required>
             <label for="prenom">Prenom</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="tele" placeholder="12345678" formControlName="teleNum">
+            <input type="number" class="form-control" id="tele" placeholder="12345678" formControlName="teleNum" required>
             <label for="tele">Numero de télèphone</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail">
+          <input type="email" class="form-control" id="mail" placeholder="name@example.com" formControlName="mail" required>
           <label for="mail">Email address </label>
         </div>
         <div class="form-floating mb-4">
-          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" required>
           <label for="password">Password</label>
         </div>
     

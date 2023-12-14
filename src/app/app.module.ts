@@ -33,6 +33,7 @@ import { GardienReservationComponent } from './Gardien/gardien-reservation/gardi
 import { ClientsComponent } from './Admin/clients/clients.component';
 import { GardiensComponent } from './Admin/gardiens/gardiens.component';
 import { AllReservationsComponent } from './Admin/all-reservations/all-reservations.component';
+import { AddGardienComponent } from './Admin/add-gardien/add-gardien.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { AllReservationsComponent } from './Admin/all-reservations/all-reservati
     GardienReservationComponent,
     ClientsComponent,
     GardiensComponent,
-    AllReservationsComponent
+    AllReservationsComponent,
+    AddGardienComponent
   ],
   imports: [
     BrowserModule,

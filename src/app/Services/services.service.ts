@@ -32,6 +32,10 @@ export class ServicesService {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post(`${this.BASED_URL}addClient`, data, { headers });
   }
+  addGardien(data: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.BASED_URL}addGardien`, data, { headers });
+  }
 
 
 
