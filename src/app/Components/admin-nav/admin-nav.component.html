@@ -1,17 +1,17 @@
 
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="/admin/dashboard" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <span class="fs-4">garde Animaux</span>
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link text-black" aria-current="page">Clients</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-black">Gardiens</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-black">Reservations</a></li>
+        <li class="nav-item"><a  routerLink="/Clients" class="nav-link text-black" aria-current="page">Clients</a></li>
+        <li class="nav-item"><a  routerLink="/Gardiens" class="nav-link text-black">Gardiens</a></li>
+        <li class="nav-item"><a  routerLink="/AllReservations" class="nav-link text-black">Reservations</a></li>
       </ul>
 
-      <div *ngIf="loggedIn == true" class="col-md-3 text-end">
+      <div  class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2" (click)="goToProfil()">Profile</button>
         <button type="button" class="btn btn-outline-primary me-2" (click)="loggout()">se deconnecter</button>
       </div>

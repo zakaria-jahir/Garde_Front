@@ -1,0 +1,31 @@
+<app-gardien-nav></app-gardien-nav>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nom du l'animal</th>
+        <th scope="col">type du l'animal</th>
+        <th scope="col">Date Debut </th>
+        <th scope="col">Date Fin </th>
+        <th scope="col">Total</th>
+        <th scope="col">supprimer </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.nomAnimal }}</td>
+        <td>{{ reservation.typeAnimal }}</td>
+        <td>{{ reservation.dateDebut }}</td>
+        <td>{{ reservation.dateFin }}</td>
+        <td>{{ reservation.total }}</td>
+
+        <td>
+            <a (click)="deleteReservation(reservation.id)" class="btn btn-danger">Annuler</a>
+          </td>
+       
+                   
+      </tr>
+    </tbody>
+  </table>
+
+

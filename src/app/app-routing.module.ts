@@ -17,12 +17,19 @@ import { ProfilClientComponent } from './Client/profil-client/profil-client.comp
 import { AdminDashComponent } from './Admin/admin-dash/admin-dash.component';
 import { ClientReservationComponent } from './Client/client-reservation/client-reservation.component';
 import { UpdateReservationComponent } from './Client/update-reservation/update-reservation.component';
+import { GardienReservationComponent } from './Gardien/gardien-reservation/gardien-reservation.component';
+import { ClientsComponent } from './Admin/clients/clients.component';
+import { AllReservationsComponent } from './Admin/all-reservations/all-reservations.component';
+import { GardiensComponent } from './Admin/gardiens/gardiens.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'accueil', pathMatch:'full'},
   {path:'accueil', component:AccueilComponent},
   {path:'logadmin', component:AdminLoginComponent},
   {path:'register', component: RegisterComponent},
+  {path:'Clients', component: ClientsComponent},
+  {path:'AllReservations', component: AllReservationsComponent},
+  {path:'Gardiens', component: GardiensComponent},
   {path:'login', component: LoginComponent},
   {path:'adminadmin', component:AdminLoginComponent},
   {path:'login/gardien', component:GardienLoginComponent},
@@ -34,6 +41,7 @@ const routes: Routes = [
   {path:'gardien/:id', component:DetailGardienComponent},
   {path:'Apropos', component:AboutComponent},
   { path: 'client-reservations', component: ClientReservationComponent },
+  { path: 'gardien-reservations', component: GardienReservationComponent },
   { path: 'update-reservation/:id', component: UpdateReservationComponent },
   {path:'resersation/:id', component:ReservationsComponent},
   {path:'Facture/:id', component:ValidreservationComponent},

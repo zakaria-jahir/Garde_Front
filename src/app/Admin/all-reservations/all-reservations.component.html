@@ -1,0 +1,55 @@
+<app-admin-nav></app-admin-nav>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nom Facture</th>
+        <th scope="col">prenom facture</th>
+        <th scope="col">mailFacture</th>
+        <th scope="col">adresseFacture </th>
+        <th scope="col">nomAnimal</th>
+        <th scope="col">typeAnimal</th>
+        <th scope="col">date debut</th>
+        <th scope="col">date fin</th>
+        <th scope="col"> nom client</th>
+        <th scope="col">mail client</th>
+        <th scope="col">numero telephone client</th>
+        <th scope="col">nom gardien</th>
+        <th scope="col">mail gardien</th>
+        <th scope="col">numero telephone gardien</th>
+        <th scope="col">total</th>
+        <!-- <th scope="col">Modifier </th> -->
+        <th scope="col">supprimer </th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservationList">
+        <td>{{ reservation.nomFacture }}</td>
+        <td>{{ reservation.prenomFacture }}</td>
+        <td>{{ reservation.mailFacture }}</td>
+        <td>{{ reservation.adresseFacture }}</td>
+        <td>{{ reservation.nomAnimal }}</td>
+        <td>{{ reservation.typeAnimal }}</td>
+        <td>{{ reservation.dateDebut }}</td>
+        <td>{{ reservation.dateFin }}</td>
+        <td>{{ reservation.client.nom }}</td>
+        <td>{{ reservation.client.mail }}</td>
+        <td>{{ reservation.client.teleNum }}</td>
+        <td>{{ reservation.gardien.nom }}</td>
+        <td>{{ reservation.gardien.mail }}</td>
+        <td>{{ reservation.gardien.teleNum }}</td>
+        <td>{{ reservation.total }}</td>
+        
+
+
+         <td>
+            <a (click)="deleteReservation(reservation.id)" class="btn btn-danger me-2">Annuler</a>
+          </td>
+        <!--<td>
+            <a (click)="deleteReservation(reservation.id)" class="btn btn-danger">Annuler</a>
+          </td> -->
+       
+                   
+      </tr>
+    </tbody>
+  </table>

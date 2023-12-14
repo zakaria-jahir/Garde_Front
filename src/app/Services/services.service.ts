@@ -61,6 +61,14 @@ export class ServicesService {
     const url = this.BASED_URL + 'gardiens';
     return this.http.get(url).pipe(map(data => data));
   }
+  getClients(){
+    const url = this.BASED_URL + 'clients';
+    return this.http.get(url).pipe(map(data => data));
+  }
+  getReservations(){
+    const url = this.BASED_URL + 'reservations';
+    return this.http.get(url).pipe(map(data => data));
+  }
   getGardienById(gardienId: any): Observable<any> {
     const url = this.BASED_URL + 'gardien/'+gardienId;
     return this.http.get<any>(url).pipe(map(data => data)); 
@@ -92,7 +100,13 @@ export class ServicesService {
     const url = `${this.BASED_URL}clientReservations/${clientId}`;
     return this.http.get<any>(url);
   }
-  
+
+  getAdminReservations(gardienId: number): Observable<any> {
+    const url = `${this.BASED_URL}gardienReservations/${gardienId}`;
+    return this.http.get<any>(url);
+  }
+   
+
 
   updateClientProfil(data: any): Observable<any> {
     const headers = { 'Content-Type': 'application/json' };

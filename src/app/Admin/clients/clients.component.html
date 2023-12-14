@@ -1,0 +1,30 @@
+<app-admin-nav></app-admin-nav>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nom </th>
+        <th scope="col">prenom</th>
+        <th scope="col">Numero du télèphone </th>
+        <th scope="col">mail </th>
+        <!-- <th scope="col">Modifier </th>
+        <th scope="col">supprimer </th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clientList">
+        <td>{{ client.nom }}</td>
+        <td>{{ client.prenom }}</td>
+        <td>{{ client.teleNum }}</td>
+        <td>{{ client.mail }}</td>
+        <!-- <td>
+            <a (click)="updateReservation(reservation.id)" class="btn btn-warning me-2">Modifier</a>
+          </td>
+        <td>
+            <a (click)="deleteReservation(reservation.id)" class="btn btn-danger">Annuler</a>
+          </td> -->
+       
+                   
+      </tr>
+    </tbody>
+  </table>

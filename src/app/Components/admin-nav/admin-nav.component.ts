@@ -36,6 +36,16 @@ export class AdminNavComponent implements OnInit {
     }
   }
   
+  navigateToReservations() {
+    this.router.navigate(['/Clients']);
+  }
+  navigateToGardiens() {
+    this.router.navigate(['/Gardiens']);
+  }
+  navigateToClients() {
+    this.router.navigate(['/Clients']);
+  }
+
 
   goToProfil(){
     this.router.navigate(['ClientProfil',this.idAdmin]);

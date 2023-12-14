@@ -29,6 +29,10 @@ import { GardienNavComponent } from './Components/gardien-nav/gardien-nav.compon
 import { ClientReservationComponent } from './Client/client-reservation/client-reservation.component';
 import { UpdateReservationComponent } from './Client/update-reservation/update-reservation.component';
 import { FormsModule } from '@angular/forms';
+import { GardienReservationComponent } from './Gardien/gardien-reservation/gardien-reservation.component';
+import { ClientsComponent } from './Admin/clients/clients.component';
+import { GardiensComponent } from './Admin/gardiens/gardiens.component';
+import { AllReservationsComponent } from './Admin/all-reservations/all-reservations.component';
 
 
 @NgModule({
@@ -54,7 +58,11 @@ import { FormsModule } from '@angular/forms';
     AdminNavComponent,
     GardienNavComponent,
     ClientReservationComponent,
-    UpdateReservationComponent
+    UpdateReservationComponent,
+    GardienReservationComponent,
+    ClientsComponent,
+    GardiensComponent,
+    AllReservationsComponent
   ],
   imports: [
     BrowserModule,

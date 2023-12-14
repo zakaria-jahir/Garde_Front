@@ -1,0 +1,36 @@
+<app-admin-nav></app-admin-nav>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nom </th>
+        <th scope="col">prenom</th>
+        <th scope="col">Numero du télèphone </th>
+        <th scope="col">mail </th>
+        <th scope="col">typeGardien</th>
+        <th scope="col">typeAnimaux</th>
+        <th scope="col">prixJour</th>
+        <!-- <th scope="col">Modifier </th>
+        <th scope="col">supprimer </th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gardien of gardienList">
+        <td>{{ gardien.nom }}</td>
+        <td>{{ gardien.prenom }}</td>
+        <td>{{ gardien.teleNum }}</td>
+        <td>{{ gardien.mail }}</td>
+        <td>{{ gardien.typeGardien }}</td>
+        <td>{{ gardien.typeAnimaux }}</td>
+        <td>{{ gardien.prixJour }}</td>
+        <!-- <td>
+            <a (click)="updateReservation(reservation.id)" class="btn btn-warning me-2">Modifier</a>
+          </td>
+        <td>
+            <a (click)="deleteReservation(reservation.id)" class="btn btn-danger">Annuler</a>
+          </td> -->
+       
+                   
+      </tr>
+    </tbody>
+  </table>
